@@ -2,39 +2,51 @@ package BlackJack
 
 import "fmt"
 
-/*
-type ScorePlayer interface {
 
-	Score()
-}
+import "math/rand"
 
 type Player struct {
-
 	choice bool
+}
+
+
+func Generate() (int,int) {
+
+	card1 := rand.Intn(11)
+	card2 := rand.Intn(10)
+	fmt.Println("Player's Card 1")
+	fmt.Println(card1)
+	fmt.Println("Player's Card 2")
+	fmt.Println(card2)
+
+
+
+	return card1,card2 
+
 
 }
 
 
-type Dealer struct {
-	choice bool
 
-}*/
+func Score(card1 int,card2 int) int {
 
-func Score() int {
 	
-	fmt.Println("21")
-	return 21
+	fmt.Println(rand.Intn(52))
+	
+
+
+	return card1+card2
 }
 
-/*
-func Winner() string {
 
-	if Player.Score == 21 {
-		return "Player"
-	} else if Dealer.Score ==21 {
-		return "Dealer"
+
+
+
+func Winner() int {
+
+	if Score(10,11) == 21 {
+		fmt.Println("Player is the winner!!")
+		return 1
 	}
-*/
-
-
-
+	return 0
+}
